@@ -20,8 +20,8 @@ requirements:
     - pkg-config
     - make
     - cmake
-  host:
     - libgit2
+  host:
     - zlib
 
 test:
