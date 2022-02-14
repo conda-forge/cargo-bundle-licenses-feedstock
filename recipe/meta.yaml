@@ -21,6 +21,7 @@ requirements:
     - make
     - cmake
   host:
+    - libgit2
     - zlib
 
 test:
