@@ -25,7 +25,7 @@ mkdir $CARGO_HOME
 export RUSTFLAGS=$CARGO_BUILD_RUSTFLAGS
 
 # build statically linked binary with Rust
-cargo install --locked --root "$PREFIX" --path .
+cargo install --verbose --locked --root "$PREFIX" --path .
 
 # strip debug symbols
 "$STRIP" "$PREFIX/bin/cargo-bundle-licenses"
