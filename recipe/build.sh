@@ -2,18 +2,18 @@
 
 set -o xtrace -o nounset -o pipefail -o errexit
 
-if [ "$target_platform" != "osx-arm64" ]; then
-  ### Assert licenses are available
-  # Install cargo-license
-  export CARGO_HOME="$BUILD_PREFIX/cargo"
-  mkdir $CARGO_HOME
-  # Needed to bootstrap itself into the conda ecosystem
-  cargo install cargo-bundle-licenses
+export CARGO_HOME="$BUILD_PREFIX/cargo"
+mkdir $CARGO_HOME
 
-  # Check that all downstream libraries licenses are present
-  export PATH=$PATH:$CARGO_HOME/bin
-  cargo bundle-licenses --format yaml --output CI.THIRDPARTY.yml --previous THIRDPARTY.yml --check-previous
-fi
+(
+  # Needed to bootstrap itself into the conda ecosystem
+  unset CARGO_BUILD_TARGET
+  cargo install cargo-bundle-licenses
+)
+
+# Check that all downstream libraries licenses are present
+export PATH=$CARGO_HOME/bin:$PATH
+cargo bundle-licenses --format yaml --output CI.THIRDPARTY.yml --previous THIRDPARTY.yml --check-previous
 
 # build statically linked binary with Rust
 cargo install --locked --root "$PREFIX" --path .
