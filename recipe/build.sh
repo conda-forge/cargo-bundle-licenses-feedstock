@@ -8,6 +8,8 @@ mkdir $CARGO_HOME
 (
   # Needed to bootstrap itself into the conda ecosystem
   unset CARGO_BUILD_TARGET
+  export CARGO_BUILD_RUSTFLAGS=$(echo $CARGO_BUILD_RUSTFLAGS | sed "s@$PREFIX@$BUILD_PREFIX@g")
+  unset MACOSX_DEPLOYMENT_TARGET
   cargo install cargo-bundle-licenses
 )
 
