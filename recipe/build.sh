@@ -14,7 +14,8 @@ mkdir $CARGO_HOME
   unset CFLAGS
   unset CPPFLAGS
   unset LDFLAGS
-  cargo install cargo-bundle-licenses
+  unset PREFIX
+  cargo install cargo-bundle-licenses -verbose
   # Check that all downstream libraries licenses are present
   export PATH=$CARGO_HOME/bin:$PATH
   cargo bundle-licenses --format yaml --output CI.THIRDPARTY.yml --previous THIRDPARTY.yml --check-previous
