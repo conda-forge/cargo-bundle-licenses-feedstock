@@ -10,6 +10,9 @@ mkdir $CARGO_HOME
   unset CARGO_BUILD_TARGET
   export CARGO_BUILD_RUSTFLAGS=$(echo $CARGO_BUILD_RUSTFLAGS | sed "s@$PREFIX@$BUILD_PREFIX@g")
   unset MACOSX_DEPLOYMENT_TARGET
+  unset CFLAGS
+  unset CPPFLAGS
+  unset LDFLAGS
   cargo install cargo-bundle-licenses
 )
 
