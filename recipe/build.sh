@@ -22,6 +22,8 @@ mkdir $CARGO_HOME
   cargo bundle-licenses --format yaml --output CI.THIRDPARTY.yml --previous THIRDPARTY.yml --check-previous
 )
 
+echo $CONDA_RUST_HOST, $CONDA_RUST_TARGET
+
 export RUSTFLAGS=$CARGO_BUILD_RUSTFLAGS
 
 # build statically linked binary with Rust
