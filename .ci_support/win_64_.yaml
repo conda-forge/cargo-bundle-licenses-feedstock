@@ -3,7 +3,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libgit2:
-- '1.7'
+- '1.8'
 m2w64_c_compiler:
 - m2w64-toolchain
 rust_compiler:
