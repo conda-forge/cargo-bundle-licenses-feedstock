@@ -3,12 +3,18 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libgit2:
-- '1.7'
+- '1.8'
 m2w64_c_compiler:
-- m2w64-toolchain
+- gcc
+m2w64_c_compiler_version:
+- '13'
+m2w64_c_stdlib:
+- m2w64-sysroot
+m2w64_c_stdlib_version:
+- '12'
 rust_compiler:
 - rust
 target_platform:
 - win-64
 zlib:
-- '1.2'
+- '1'
