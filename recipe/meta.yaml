@@ -19,6 +19,7 @@ requirements:
     - {{ stdlib("c") }}    # [not win]
     - {{ compiler('m2w64_c') }}  # [win]
     - {{ stdlib("m2w64_c") }}    # [win]
+    - binutils    # [win]
     - pkg-config
     - make
     - cmake
