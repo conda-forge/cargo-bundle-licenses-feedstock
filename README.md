@@ -198,4 +198,5 @@ Feedstock Maintainers
 =====================
 
 * [@sstadick](https://github.com/sstadick/)
+* [@xhochy](https://github.com/xhochy/)
 
