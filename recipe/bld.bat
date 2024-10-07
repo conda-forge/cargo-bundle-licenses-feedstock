@@ -1,3 +1,8 @@
+@echo on
+
+set CARGO_PROFILE_RELEASE_STRIP=symbols
+set CARGO_PROFILE_RELEASE_LTO=fat
+
 :: Install cargo-license
 set CARGO_HOME=%BUILD_PREFIX%\cargo
 mkdir %CARGO_HOME%
@@ -9,13 +14,7 @@ set PATH=%PATH%;%CARGO_HOME%\bin
 cargo bundle-licenses --format yaml --output CI.THIRDPARTY.yml --previous THIRDPARTY.yml --check-previous
 
 :: build
-cargo install --locked --root "%PREFIX%" --path . || goto :error
-
-:: strip debug symbols
-strip "%PREFIX%\bin\cargo-bundle-licenses.exe" || goto :error
-
-:: remove extra build file
-del /F /Q "%PREFIX%\.crates.toml"
+cargo install --no-track --locked --root "%PREFIX%" --path . || goto :error
 
 goto :EOF
 

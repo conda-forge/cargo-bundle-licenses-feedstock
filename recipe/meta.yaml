@@ -15,11 +15,8 @@ build:
 requirements:
   build:
     - {{ compiler('rust') }}
-    - {{ compiler('c') }}  # [not win]
-    - {{ stdlib("c") }}    # [not win]
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ stdlib("m2w64_c") }}    # [win]
-    - binutils    # [win]
+    - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - pkg-config
     - make
     - cmake
