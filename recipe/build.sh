@@ -2,6 +2,10 @@
 
 set -o xtrace -o nounset -o pipefail -o errexit
 
+
+export CARGO_PROFILE_RELEASE_STRIP=symbols
+export CARGO_PROFILE_RELEASE_LTO=fat
+
 export CARGO_HOME="$BUILD_PREFIX/cargo"
 mkdir $CARGO_HOME
 
@@ -32,10 +36,4 @@ echo $CONDA_RUST_HOST, $CONDA_RUST_TARGET
 export RUSTFLAGS=$CARGO_BUILD_RUSTFLAGS
 
 # build statically linked binary with Rust
-cargo install --verbose --locked --root "$PREFIX" --path .
-
-# strip debug symbols
-"$STRIP" "$PREFIX/bin/cargo-bundle-licenses"
-
-# remove extra build file
-rm -f "${PREFIX}/.crates.toml"
+cargo install --no-track --verbose --locked --root "$PREFIX" --path .

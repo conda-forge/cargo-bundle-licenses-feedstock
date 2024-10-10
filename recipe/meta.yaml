@@ -10,13 +10,13 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('rust') }}
-    - {{ compiler('c') }}  # [not win]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - pkg-config
     - make
     - cmake
@@ -40,3 +40,4 @@ about:
 extra:
   recipe-maintainers:
     - sstadick
+    - xhochy
