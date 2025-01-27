@@ -1,5 +1,5 @@
-{% set version = "2.3.0" %}
-{% set sha256 = "fca4022b71443949f0d28ffb025f21a8df378448bccc7f8858b21b9d5df5e4e2" %}
+{% set version = "3.0.0" %}
+{% set sha256 = "f599630a8bc5fb35e627c88d0179f6e5aa74b88603f102aaa06e7d6241f544f3" %}
 
 package:
   name: cargo-bundle-licenses
@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
