@@ -1,8 +1,8 @@
 schema_version: 1
 
 context:
-  version: 4.0.0
-  sha256: fc702051ed5556d88d20e93f14efb23cc257091046f47bb69e76363ecf6b4760
+  version: "4.2.0"
+  sha256: 196d27676dae302d3c91315c1323b790f13b838b6dfd67b2f6c0236a55547765
 
 package:
   name: cargo-bundle-licenses
@@ -13,7 +13,7 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
