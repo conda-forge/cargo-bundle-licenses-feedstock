@@ -7,7 +7,7 @@
 
 [project]
 name = "cargo-bundle-licenses-feedstock"
-version = "3.50.0"  # conda-smithy version used to generate this file
+version = "3.52.3"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/cargo-bundle-licenses-feedstock"
 authors = ["@conda-forge/cargo-bundle-licenses"]
 channels = ["conda-forge"]
@@ -64,6 +64,7 @@ description = "List contents of cargo-bundle-licenses-feedstock packages built f
 
 [feature.smithy.dependencies]
 conda-smithy = "*"
+shellcheck = "*"
 [feature.smithy.tasks.build-locally]
 cmd = "python ./build-locally.py"
 description = "Build packages locally using the same setup scripts used in conda-forge's CI"
