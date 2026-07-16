@@ -9,11 +9,6 @@ export CARGO_PROFILE_RELEASE_LTO=fat
 export CARGO_HOME="$BUILD_PREFIX/cargo"
 mkdir $CARGO_HOME
 
-if [[ "$c_compiler" == "clang" ]]; then
-  echo "-L$BUILD_PREFIX/lib -Wl,-rpath,$BUILD_PREFIX/lib" > $BUILD_PREFIX/bin/$BUILD.cfg
-  echo "-L$PREFIX/lib -Wl,-rpath,$PREFIX/lib" > $BUILD_PREFIX/bin/$HOST.cfg
-fi
-
 (
   # Needed to bootstrap itself into the conda ecosystem
   unset CARGO_BUILD_TARGET
